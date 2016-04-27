@@ -1,0 +1,28 @@
+<!-- Insert between the <body> tags
+
+For more info, visit this page:
+
+support.google.com/adxbuyer/answer/165288?hl=en
+
+-->
+{% extends "base.html" %}
+{% block head %}
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var google_conversion_id = 1234567890;
+var google_conversion_language = "en_US";
+var google_conversion_format = "1";
+var google _conversion_color = "666666";
+var google_conversion_label = "Purchase";
+//-->
+</script>
+<script language = "JavaScript" src = "http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<img height=1 width=1 border=0
+src="http://www.googleadservices.com/pagead/conversion/1234567890/?value=1&label=Purchase&script=0">
+</noscript>
+
+{% endblock head %}
+

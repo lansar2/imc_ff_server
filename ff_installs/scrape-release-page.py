@@ -13,8 +13,11 @@ rel = tree.xpath("//a/text()")
 rel1 = [i.translate(None, "/") for i in rel]
 releases = [j for j in rel1 if not re.search(r'[a-zA-Z]', j) and j != '..'] 
 
-with open('ff_releases.csv', 'wb') as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow(releases)
+writefile = open('ff_releases.txt', 'wb')
+for k in releases:
+    writefile.write("%s\n" % k)
+
+writefile.close()    
+
 
 

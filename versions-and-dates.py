@@ -53,7 +53,7 @@ with open(infile) as f:
 '''
 "abbreviation","standard_id","name","feature_id","count"
 '''
-infile = "standards_features_counts.csv"
+infile = "standards_features_all.csv"
 
 with open(infile) as f:
   csvfile = csv.reader(f)
@@ -63,10 +63,10 @@ with open(infile) as f:
     feature_info[feature] = {'feature':feature,'family_id':family_id,'family':family,
                              'feature_id':feature_id,'count':count}
 
-  families = set(map(lambda x: x['family'], feature_info.values()))
+  families = set(map(lambda x: x['family_id'], feature_info.values()))
   # log(families)
   for feature,info in feature_info.items():
-    this_fam = info['family']
+    this_fam = info['family_id']
     if this_fam not in most_popular_feature:
       # log("adding new fam top feature: {}".format(this_fam))
       most_popular_feature[this_fam] = info
